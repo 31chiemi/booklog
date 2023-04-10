@@ -57,4 +57,4 @@ group :production do
   gem 'pg'
 end
 
-#コメントアウト
+gem 'devise'
