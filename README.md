@@ -20,7 +20,7 @@
 | -----------| ---------- | ------------------------------ |
 | title      | string     | null: false                    |
 | content    | text       |                                |
-| genle_id   | integer    | null: false                    |
+| genre_id   | integer    | null: false                    |
 | user       | references | null: false, foreign_key: true |
 
 ### Association

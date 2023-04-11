@@ -1,0 +1,16 @@
+<h1>トップページ</h1>
+<%= link_to "新規登録", new_user_registration_path, class:"register" %>
+<%= link_to "ログイン", new_user_session_path, class:"login" %>
+<%= link_to "ログアウト", destroy_user_session_path, class:"logout" %>
+
+<div class="contents row">
+  <% @books.each do |book| %>
+      <p><%= book.title %></p>
+      <span class="innner">
+        <%= image_tag book.image.variant(resize: '200x200'), class: 'book-image' if book.image.attached? %>
+        <%= book.content %>
+      </span>
+    </div>
+  <% end %>
+</div>
+
