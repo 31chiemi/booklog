@@ -1,11 +1,10 @@
 <div class="contents row">
-  <p><%= @nickname %>さんの投稿一覧</p>
+  <p><%= @nickname %>さん <%= @age.to_i %>歳</p>
   <% @books.each do |book| %>
-      <p><%= book.title %></p>
-      <p><%= book.content %></p>
       <span class="innner">
         <%= image_tag book.image, class: 'book-image' if book.image.attached? %>
       </span>
+      <p><%= book.content %></p>
     </div>
   <% end %>
 </div>

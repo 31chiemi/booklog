@@ -4,4 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :books
+  def age
+    (Time.zone.now - birthday.to_time) / 1.year.seconds
+  end
 end
