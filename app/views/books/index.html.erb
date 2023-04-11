@@ -10,7 +10,6 @@
         <%= image_tag book.image.variant(resize: '200x200'), class: 'book-image' if book.image.attached? %>
         <%= book.content %>
           <div class="more">
-            <span><%= image_tag 'arrow_top.png' %></span>
             <ul class="more_list">
               <li>
                 <%= link_to '削除',  book_path(book.id), method: :delete %>
