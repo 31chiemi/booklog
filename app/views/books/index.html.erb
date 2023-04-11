@@ -14,6 +14,9 @@
               <li>
                 <%= link_to '削除',  book_path(book.id), method: :delete %>
               </li>
+              <li>
+                <%= link_to '編集', edit_book_path(book.id), method: :get %>
+              </li>              
             </ul>
           </div>
       </span>
