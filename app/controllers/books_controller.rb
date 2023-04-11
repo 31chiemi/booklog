@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :set_book, only: [:destroy, :show, :edit, :update]
+  
   def index
     @books = Book.all
   end
@@ -17,22 +19,24 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    @book = Book.find(params[:id])
     @book.destroy
   end
 
   def edit
-    @book = Book.find(params[:id])
   end
 
   def update
-    @book = Book.find(params[:id])
     @book.update(book_params)
   end
-  
+
+  def show
+  end
   private
   def book_params
     params.require(:book).permit(:title, :content, :genre_id, :image).merge(user_id: current_user.id)
   end
-
+  
+  def set_book
+    @book = Book.find(params[:id])
+  end
 end
