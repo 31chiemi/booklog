@@ -1,0 +1,17 @@
+     <p><%= @book.title %></p>
+      <span class="innner">
+        <%= image_tag @book.image.variant(resize: '400x400'), class: 'book-image' if @book.image.attached? %>
+        <%= @book.genre.name %>
+        <%= @book.content %>
+          <div class="more">
+            <ul class="more_list">
+              <li>
+                <%= link_to '編集', edit_book_path(@book.id), method: :get %>
+              </li>            
+              <li>
+                <%= link_to '削除',  book_path(@book.id), method: :delete %>
+              </li>
+            </ul>
+          </div>
+      </span>
+    </div>
