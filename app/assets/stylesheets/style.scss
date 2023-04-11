@@ -1,0 +1,38 @@
+//一覧画面//
+
+a{
+  color:inherit;
+  text-decoration: none;
+}
+
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.inner {
+  width: calc(16.66% - 10px);
+  margin-bottom: 20px;
+}
+
+
+.picture {
+  margin: 0px 45px;
+  padding: 10px;
+}
+
+.userlink {
+  margin: 0 45px;
+}
+
+.more_list {
+  display: flex;
+  list-style: none;
+}
+
+.lists {
+  margin: 0 10px;
+  
+}
+

@@ -1,28 +1,6 @@
-<div class="contents row">
+<div class="contents">
   <% @books.each do |book| %>
-      <p><%= book.title %></p>
-      <a href="/users/<%= book.user.id %>">
-        <span>by</span><%= book.user.nickname %>
-      </a>
-      <span class="innner">
-        <%= image_tag book.image, class: 'book-image' if book.image.attached? %>
-          <div class="more">
-            <ul class="more_list">
-              <li>
-                <%= link_to '詳細', book_path(book.id), method: :get %>
-             </li> 
-             <% if user_signed_in? && current_user.id == book.user_id %> 
-                <li>
-                  <%= link_to '編集', edit_book_path(book.id), method: :get %>
-                </li>            
-                <li>
-                  <%= link_to '削除',  book_path(book.id), method: :delete %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-      </span>
-    </div>
+    <%= render partial: "book", locals: { book: book } %>
   <% end %>
 </div>
 

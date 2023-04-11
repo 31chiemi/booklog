@@ -1,0 +1,31 @@
+      <div class="inner">
+        <div class="picture">
+          <%= image_tag book.image.variant(resize: '200x200'), class: 'book-image' if book.image.attached? %>
+        </div>
+        <div class="userlink">
+          <a href="/users/<%= book.user.id %>">
+            <%= book.user.nickname %>
+          </a>
+        </div>
+        <div class="more">
+          <ul class="more_list">
+            <div class="lists">
+              <li>
+                <%= link_to '詳細', book_path(book.id), method: :get %>
+              </li>
+            </div> 
+            <% if user_signed_in? && current_user.id == book.user_id %>
+              <div class="lists">
+                <li>
+                  <%= link_to '編集', edit_book_path(book.id), method: :get %>
+                </li>
+              </div>
+              <div class="lists">           
+                <li>
+                  <%= link_to '削除',  book_path(book.id), method: :delete %>
+                </li>
+              </div>
+            <% end %>
+          </ul>
+        </div>
+      </div>
