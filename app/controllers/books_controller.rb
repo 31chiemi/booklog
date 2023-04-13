@@ -4,7 +4,7 @@ class BooksController < ApplicationController
 
   def index
     #@books = Book.includes(:user).order("genre_id DESC")
-    books = Book.all
+    @books = Book.all
   end
 
   def new
