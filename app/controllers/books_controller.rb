@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @books = Book.all
+    @books = Book.includes(:user).order("genre_id DESC")
   end
 
   def new

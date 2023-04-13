@@ -39,9 +39,12 @@ a{
   padding: 5px;
 }
 
+.created_at {
+  font-size: 16px;
+}
+
 .nicknameage {
-  font-size: 45px;
-  font-weight: bold;
+  font-size: 30px;
 }
 
 //↑ユーザーページ//
@@ -60,9 +63,13 @@ a{
 
 .detail {
   margin-left: 40px;
+  
 }
 
-
+//詳細//
+title2 {
+  font-size: 30px;
+}
 
 //追加２//
 @charset "UTF-8";

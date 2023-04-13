@@ -1,4 +1,4 @@
-<div class="nicknameage"><p><%= @nickname %>
+<div class="nicknameage"><p><%= @nickname %></div>
 <div class="contents">
   <% @books.each do |book| %>
     <%= render partial: "userlog", locals: { book: book } %> 
