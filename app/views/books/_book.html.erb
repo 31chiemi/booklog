@@ -1,6 +1,9 @@
       <div class="inner">
+        <div class="genrename">
+        <%= book.genre.name %>
+        </div>
         <div class="picture">
-          <%= image_tag book.image.variant(resize: '200x200'), class: 'book-image' if book.image.attached? %>
+          <%= image_tag book.image.variant(resize: '300x300'), class: 'book-image' if book.image.attached? %>
         </div>
         <div class="userlink">
           <a href="/users/<%= book.user.id %>">
@@ -10,9 +13,9 @@
         <div class="more">
           <ul class="more_list">
             <div class="lists">
-              <li>
+              <div class="detail"><li>
                 <%= link_to '詳細', book_path(book.id), method: :get %>
-              </li>
+              </li></div>
             </div> 
             <% if user_signed_in? && current_user.id == book.user_id %>
               <div class="lists">

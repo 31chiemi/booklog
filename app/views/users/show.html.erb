@@ -1,11 +1,6 @@
-<div class="contents row">
-  <p><%= @nickname %>さん <%= @age.to_i %>歳</p>
+<div class="nicknameage"><p><%= @nickname %>
+<div class="contents">
   <% @books.each do |book| %>
-      <span class="innner">
-        <%= image_tag book.image, class: 'book-image' if book.image.attached? %>
-      </span>
-      <p><%= book.content %></p>
-    </div>
+    <%= render partial: "userlog", locals: { book: book } %> 
   <% end %>
 </div>
-

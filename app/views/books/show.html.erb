@@ -1,17 +1,21 @@
-     <p><%= @book.title %></p>
+     <p><%= @book.genre.name %></p>
       <span class="innner">
-        <%= image_tag @book.image, class: 'book-image' if @book.image.attached? %>
-        <%= @book.genre.name %>
+      <div class="picture2">
+        <%= image_tag @book.image.variant(resize: '600x600'), class: 'book-image' if @book.image.attached? %>
+      </div> 
         <%= @book.content %>
           <% if user_signed_in? && current_user.id == @book.user_id %>
             <div class="more">
-              <ul class="more_list">
+              <ul class="list">
+               
                 <li>
                   <%= link_to '編集', edit_book_path(@book.id), method: :get %>
-                </li>            
+                </li>
+                        
                 <li>
                   <%= link_to '削除',  book_path(@book.id), method: :delete %>
                 </li>
+               </div>
               </ul>
             </div>
           <% end %>

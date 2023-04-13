@@ -3,7 +3,8 @@ class BooksController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @books = Book.all.includes(:user)
+    query= "SELECT * FROM books ORDER BY genre_id DESC"
+    @books = Book.find_by_sql(query)
   end
 
   def new
