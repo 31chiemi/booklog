@@ -66,3 +66,4 @@ gem 'image_processing', '~> 1.2'
 gem 'pry-rails'
 
 #デプロイの確認
+#デプロイの確認
