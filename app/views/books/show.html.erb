@@ -3,14 +3,9 @@
       <div class="picture2">
         <%= image_tag @book.image.variant(resize: '600x600'), class: 'book-image' if @book.image.attached? %>
       </div>
-      <div class="title2">
-        <%= @book.title  %>
-      </div>  
-        <%= @book.content %>
           <% if user_signed_in? && current_user.id == @book.user_id %>
             <div class="more">
-              <ul class="list">
-               
+              <ul class="list">              
                 <li>
                   <%= link_to '編集', edit_book_path(@book.id), method: :get %>
                 </li>
